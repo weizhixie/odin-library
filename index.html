@@ -12,6 +12,37 @@
 <body>
     <header class="header">
         <h1>Library</h1>
+
+        <dialog id="add-book-dialog">
+            <form>
+                <div>
+                    <label for="book-title">Book Title</label>
+                    <input type="text" id="book-title" name="book-title" required>
+                </div>
+
+                <div>
+                    <label for="book-author">Book Author</label>
+                    <input type="text" id="book-author" name="book-author">
+                </div>
+
+                <div>
+                    <label for="book-pages">Book Pages</label>
+                    <input type="number" id="book-pages" name="book-pages">
+                </div>
+
+                <div>
+                    <label for="book-read-status">Read:</label>
+                    <input type="text" id="book-read-status" name="book-read-status">
+                </div>
+
+                <div>
+                    <button type="submit" id="close-add-book-btn">Cancel</button>
+                    <button type="submit" id="confirm-add-book-btn">Add Book</button>
+                </div>
+            </form>
+        </dialog>
+
+        <div><button id="add-book-btn">Add Book</button></div>
     </header>
 
     <main class="book-container"></main>

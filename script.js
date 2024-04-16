@@ -46,4 +46,20 @@ function displayBookCard() {
     }
 }
 
+function addBook() {
+    const addBookDialog = document.querySelector("#add-book-dialog");
+    const showDialog = document.querySelector("#add-book-btn");
+    const closeDialog = document.querySelector("#close-add-book-btn");
+
+    showDialog.addEventListener("click", () => {
+        addBookDialog.showModal();
+    });
+
+    closeDialog.addEventListener("click", (e) => {
+        e.preventDefault();
+        addBookDialog.close();
+    });
+}
+
 displayBookCard();
+addBook();
