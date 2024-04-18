@@ -3,7 +3,7 @@ const myLibrary = [
     { title: "The Hobbit", author: "J. R. R. Tolkien", pages: 372, status: "Not Read" },
     { title: "Dream of the Red Chamber", author: "Cao Xueqin", pages: 352, status: "Read" },
 ];
-const bookContainer = document.querySelector(".book-container");
+const bookContainer = document.querySelector("#book-container");
 
 function Book(title, author, pages, status) {
     this.title = title;
@@ -49,8 +49,7 @@ function displayBookCard() {
 function addBook() {
     const addBookDialog = document.querySelector("#add-book-dialog");
     const showDialog = document.querySelector("#add-book-btn");
-    const closeDialog = document.querySelector("#close-add-book-btn");
-
+    const closeDialog = document.querySelector("#cancel-add-book-btn");
     showDialog.addEventListener("click", () => {
         addBookDialog.showModal();
     });
