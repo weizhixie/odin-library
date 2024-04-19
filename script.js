@@ -16,9 +16,10 @@ function addBookToLibrary(title, author, pages, status) {
     myLibrary.push(newBook);
 }
 
-function createBookCard(title, author, pages, status) {
+function createBookCard(title, author, pages, status, bookId) {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
+    bookCard.setAttribute("data-book-id", bookId);
 
     const bookTitle = document.createElement("h2");
     bookTitle.textContent = title;
@@ -36,14 +37,32 @@ function createBookCard(title, author, pages, status) {
     bookStatus.textContent = `Status: ${status}`;
     bookCard.appendChild(bookStatus);
 
+    const removeBookIcon = document.createElement("button");
+    removeBookIcon.classList.add("remove-book-icon", "cursor", "transform-scale");
+    removeBookIcon.textContent = "x";
+    bookCard.appendChild(removeBookIcon);
+
     return bookCard;
+}
+
+function removeBookIconCard() {
+    const bookContainer = document.querySelector("#book-container");
+    bookContainer.addEventListener("click", (e) => {
+        const isRemoveBookIcon = e.target.classList.contains("remove-book-icon");
+        if (isRemoveBookIcon) {
+            const bookId = e.target.parentElement.dataset.bookId;
+            myLibrary.splice(bookId, 1);
+            displayBookCard();
+        }
+    });
 }
 
 function displayBookCard() {
     const bookContainer = document.querySelector("#book-container");
     bookContainer.textContent = "";
     for (const book of myLibrary) {
-        bookContainer.appendChild(createBookCard(book["title"], book["author"], book["pages"], book["status"]));
+        const bookId = myLibrary.indexOf(book);
+        bookContainer.appendChild(createBookCard(book["title"], book["author"], book["pages"], book["status"], bookId));
     }
 }
 
@@ -84,3 +103,4 @@ function addBook() {
 
 displayBookCard();
 addBook();
+removeBookIconCard();
