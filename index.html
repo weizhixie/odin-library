@@ -21,22 +21,22 @@
             <form id="add-book-form">
                 <div>
                     <label for="book-title">Book Title<span aria-label="required">*</span></label>
-                    <input type="text" id="book-title" name="book-title" placeholder="title" required>
+                    <input type="text" id="book-title" name="book-title" placeholder="title" required maxlength="255">
                 </div>
 
                 <div>
                     <label for="book-author">Book Author<span aria-label="required">*</span></label>
-                    <input type="text" id="book-author" name="book-author" placeholder="author" required>
+                    <input type="text" id="book-author" name="book-author" placeholder="author" required maxlength="255">
                 </div>
 
                 <div>
                     <label for="book-pages">Book Pages<span aria-label="required">*</span></label>
-                    <input type="number" id="book-pages" name="book-pages" placeholder="123" required>
+                    <input type="number" id="book-pages" name="book-pages" placeholder="123" required min="1" max="20000">
                 </div>
 
                 <div>
                     <label for="book-read-status">Read:</label>
-                    <input type="text" id="book-read-status" name="book-read-status" placeholder="read" required>
+                    <input type="text" id="book-read-status" name="book-read-status" placeholder="read" required maxlength="255">
                 </div>
 
                 <div>

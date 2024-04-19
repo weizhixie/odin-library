@@ -41,6 +41,7 @@ function createBookCard(title, author, pages, status) {
 
 function displayBookCard() {
     const bookContainer = document.querySelector("#book-container");
+    bookContainer.textContent = "";
     for (const book of myLibrary) {
         bookContainer.appendChild(createBookCard(book["title"], book["author"], book["pages"], book["status"]));
     }
@@ -70,9 +71,16 @@ function addBook() {
         const isFormValid = document.querySelector("#add-book-form").checkValidity();
         if (isFormValid) {
             e.preventDefault();
+            const bookTitle = document.querySelector("#book-title").value;
+            const bookAuthor = document.querySelector("#book-author").value;
+            const bookPages = document.querySelector("#book-pages").value;
+            const bookStatus = document.querySelector("#book-read-status").value;
+            addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus);
+            displayBookCard();
             addBookDialog.close();
         }
     });
 }
+
 displayBookCard();
 addBook();
