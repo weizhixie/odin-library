@@ -20,30 +20,29 @@
             </div>
             <form id="add-book-form">
                 <div>
-                    <label for="book-title">Book Title</label>
-                    <input type="text" id="book-title" name="book-title" required>
+                    <label for="book-title">Book Title<span aria-label="required">*</span></label>
+                    <input type="text" id="book-title" name="book-title" placeholder="title" required>
                 </div>
 
                 <div>
-                    <label for="book-author">Book Author</label>
-                    <input type="text" id="book-author" name="book-author">
+                    <label for="book-author">Book Author<span aria-label="required">*</span></label>
+                    <input type="text" id="book-author" name="book-author" placeholder="author" required>
                 </div>
 
                 <div>
-                    <label for="book-pages">Book Pages</label>
-                    <input type="number" id="book-pages" name="book-pages">
+                    <label for="book-pages">Book Pages<span aria-label="required">*</span></label>
+                    <input type="number" id="book-pages" name="book-pages" placeholder="123" required>
                 </div>
 
                 <div>
                     <label for="book-read-status">Read:</label>
-                    <input type="text" id="book-read-status" name="book-read-status">
+                    <input type="text" id="book-read-status" name="book-read-status" placeholder="read" required>
                 </div>
 
                 <div>
-                    <button type="submit" id="confirm-add-book-btn" class="cursor transform-scale btn-w8h2">Add
+                    <button id="confirm-add-book-btn" class="cursor transform-scale btn-w8h2">Add
                         Book</button>
-                    <button type="submit" id="cancel-add-book-btn"
-                        class="cursor transform-scale btn-w8h2">Cancel</button>
+                    <button id="cancel-add-book-btn" class="cursor transform-scale btn-w8h2">Cancel</button>
                 </div>
             </form>
         </dialog>
