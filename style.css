@@ -128,7 +128,7 @@ body {
     background-color: #f8f8ff;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 18rem));
-    grid-template-rows: 18rem;
+    grid-auto-rows: 20rem;
     gap: 1rem;
 }
 
@@ -142,6 +142,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    overflow: auto;
 }
 
 .book-card>p {
