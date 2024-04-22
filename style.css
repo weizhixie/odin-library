@@ -50,7 +50,7 @@ body {
     top: 35%;
     transform: translate(-50%, -50%);
     width: 26em;
-    height: 32rem;
+    height: 30rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border-radius: 13px;
     border: 1px solid #fff;
@@ -93,10 +93,6 @@ body {
 
 #add-book-form {
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 #add-book-form>div {
@@ -104,7 +100,6 @@ body {
 }
 
 #add-book-form>div>label {
-    display: block;
     font-size: 1.5rem;
 }
 
@@ -112,6 +107,12 @@ body {
     width: 20rem;
     height: 2.3rem;
     font-size: 1.2rem;
+}
+
+#book-read-status#book-read-status {
+    width: 1.8rem;
+    float:inline-end ;
+    margin-right: 9rem;
 }
 
 #confirm-add-book-btn {

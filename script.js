@@ -115,8 +115,13 @@ function addBook() {
             const bookTitle = document.querySelector("#book-title").value;
             const bookAuthor = document.querySelector("#book-author").value;
             const bookPages = document.querySelector("#book-pages").value;
-            const bookStatus = document.querySelector("#book-read-status").value;
-            addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus);
+            const bookStatus = document.querySelector("#book-read-status");
+            if (bookStatus.checked) {
+                bookStatus.value = "Read";
+            } else {
+                bookStatus.value = "Not read";
+            }
+            addBookToLibrary(bookTitle, bookAuthor, bookPages, bookStatus.value);
             displayBookCard();
             addBookDialog.close();
         }
