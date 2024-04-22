@@ -162,3 +162,15 @@ body {
 .remove-book-icon:hover {
     color: red;
 }
+
+.book-status-toggler {
+    width: 6rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background-color: #f9afbe;
+}
+
+.read {
+    background-color: #adfcea;
+}

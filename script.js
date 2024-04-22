@@ -34,8 +34,17 @@ function createBookCard(title, author, pages, status, bookId) {
     bookCard.appendChild(bookPages);
 
     const bookStatus = document.createElement("p");
-    bookStatus.textContent = `Status: ${status}`;
+    bookStatus.textContent = `Status: `;
     bookCard.appendChild(bookStatus);
+
+    const bookStatusToggler = document.createElement("button");
+    if (status === "Read") {
+        bookStatusToggler.classList.add("book-status-toggler", "cursor", "transform-scale", status.toLowerCase());
+    } else {
+        bookStatusToggler.classList.add("book-status-toggler", "cursor", "transform-scale");
+    }
+    bookStatusToggler.textContent = `${status}`;
+    bookStatus.appendChild(bookStatusToggler);
 
     const removeBookIcon = document.createElement("button");
     removeBookIcon.classList.add("remove-book-icon", "cursor", "transform-scale");
@@ -43,6 +52,19 @@ function createBookCard(title, author, pages, status, bookId) {
     bookCard.appendChild(removeBookIcon);
 
     return bookCard;
+}
+
+function toggleReadStatus() {
+    const bookContainer = document.querySelector("#book-container");
+    bookContainer.addEventListener("click", (e) => {
+        const isBookStatusToggler = e.target.classList.contains("book-status-toggler");
+        if (isBookStatusToggler) {
+            const bookId = e.target.parentElement.parentElement.dataset.bookId;
+            const toggler = e.target.classList.toggle("read");
+            let readStatus = toggler ? myLibrary[bookId]["status"] = "Read" : myLibrary[bookId]["status"] = "Not Read";
+            e.target.textContent = readStatus;
+        }
+    });
 }
 
 function removeBookIconCard() {
@@ -104,3 +126,4 @@ function addBook() {
 displayBookCard();
 addBook();
 removeBookIconCard();
+toggleReadStatus();
